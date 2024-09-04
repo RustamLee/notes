@@ -26,9 +26,9 @@ const addNote = () => {
   <main>
     <div v-if="showModal" class="overlay">
       <div class="modal">
-        <p @click="showModal = false">x</p>
         <textarea v-model="newNote" />
-        <button @click="addNote">Add Note</button>
+        <button class="add_button" @click="addNote">Add Note</button>
+        <button class="close_button" @click="showModal = false">Close</button>
       </div>
     </div>
     <div class="container">
@@ -138,11 +138,22 @@ main {
   flex-direction: column;
 }
 
-.modal button {
+.add_button {
   padding: 10px 20px;
   font-size: 20px;
   width: 100%;
   background-color: blueviolet;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.close_button {
+  padding: 10px 20px;
+  font-size: 20px;
+  width: 100%;
+  background-color: red;
   border: none;
   color: white;
   cursor: pointer;
